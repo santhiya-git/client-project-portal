@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#eef2f7;
+}
+
+.container{
+width:95%;
+margin:30px auto;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.top h1{
+color:#1e293b;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+padding:12px 20px;
+text-decoration:none;
+border-radius:8px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#1d4ed8;
+}
+
+.search-box{
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+padding:14px;
+font-size:16px;
+border:none;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+border-radius:12px;
+overflow:hidden;
+}
+
+th{
+background:#2563eb;
+color:white;
+padding:16px;
+}
+
+td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+background:#f8fafc;
+}
+
+.badge{
+padding:7px 15px;
+border-radius:20px;
+color:white;
+font-size:14px;
+}
+
+.Completed{
+background:#10b981;
+}
+
+.Ongoing{
+background:#f59e0b;
+}
+
+.Planning{
+background:#8b5cf6;
+}
+
+.action{
+color:#2563eb;
+font-size:18px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top">
+
+<h1>📁 Project Management</h1>
+
+<div class="buttons">
+
+<a href="/dashboard" class="btn">
+🏠 Dashboard
+</a>
+
+<a href="/addProject" class="btn">
+➕ Add Project
+</a>
+
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Search Project...">
+
+</div>
+
+<table id="projectTable">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Project</th>
+
+<th>Client</th>
+
+<th>Start Date</th>
+
+<th>End Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<% projects.forEach(project=>{ %>
+
+<tr>
+
+<td><%= project.id %></td>
+
+<td><%= project.project_name %></td>
+
+<td><%= project.client_name %></td>
+
+<td><%= project.start_date.toISOString().split("T")[0] %></td>
+
+<td><%= project.end_date.toISOString().split("T")[0] %></td>
+
+<td>
+
+<span class="badge <%= project.status %>">
+
+<%= project.status %>
+
+</span>
+
+</td>
+
+<td>
+
+<i class="fa-solid fa-eye action"></i>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+const search=document.getElementById("search");
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const rows=document.querySelectorAll("#projectTable tbody tr");
+
+rows.forEach(row=>{
+
+row.style.display=row.innerText.toLowerCase().includes(value)
+?"":"none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Project Portal Dashboard</title>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>🏥 Client Portal</h2>
+    </div>
+
+    <ul>
+
+        <li><a href="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+
+        <li><a href="/projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+
+        <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Milestones</a></li>
+
+        <li><a href="#"><i class="fa-solid fa-file-lines"></i> Documents</a></li>
+
+        <li><a href="#"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+
+        <li><a href="#"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+
+        <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h1>Dashboard</h1>
+
+        <div class="right">
+
+            <input type="text" placeholder="Search Project">
+
+            <div class="profile">
+                <i class="fa-solid fa-user"></i>
+                <span>Admin</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card blue">
+            <i class="fa-solid fa-folder"></i>
+            <h2>15</h2>
+            <p>Total Projects</p>
+        </div>
+
+        <div class="card green">
+            <i class="fa-solid fa-circle-check"></i>
+            <h2>8</h2>
+            <p>Completed</p>
+        </div>
+
+        <div class="card orange">
+            <i class="fa-solid fa-spinner"></i>
+            <h2>5</h2>
+            <p>Ongoing</p>
+        </div>
+
+        <div class="card purple">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h2>2</h2>
+            <p>Planning</p>
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="recent">
+
+            <h2>Recent Projects</h2>
+
+            <table>
+
+                <tr>
+                    <th>Project</th>
+                    <th>Client</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>AI Portal</td>
+                    <td>O2H</td>
+                    <td><span class="status ongoing">Ongoing</span></td>
+                </tr>
+
+                <tr>
+                    <td>Hospital ERP</td>
+                    <td>Apollo</td>
+                    <td><span class="status completed">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>Medicine Tracker</td>
+                    <td>ABC Pharma</td>
+                    <td><span class="status planning">Planning</span></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="right-panel">
+
+            <h2>Project Progress</h2>
+
+            <div class="progress-box">
+
+                <p>Overall Progress</p>
+
+                <div class="progress">
+
+                    <div class="progress-fill">
+                        80%
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="notification-box">
+
+                <h2>Notifications</h2>
+
+                <div class="note">
+                    🔔 AI Portal milestone due tomorrow
+                </div>
+
+                <div class="note">
+                    🔔 Hospital ERP completed successfully
+                </div>
+
+                <div class="note">
+                    🔔 3 new projects added
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
